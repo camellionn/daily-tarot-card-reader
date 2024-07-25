@@ -85,13 +85,13 @@ var deck = [
     new card("Queen of Wands", "78_QueenOfWands"),  
 ];
 
-function getRandom() {
-    let randomNum = Math.floor(Math.random()*78);
+function getRandom(deck_length) {
+    let randomNum = Math.floor(Math.random()*deck_length);
     return randomNum; 
 }
 
 document.getElementById("draw").onclick = function() {
-    var idx = getRandom();
+    var idx = getRandom(deck.length);
     var currentCard = deck[idx];
 
 document.getElementById("display").innerHTML = 
