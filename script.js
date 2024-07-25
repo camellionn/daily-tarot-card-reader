@@ -1,6 +1,7 @@
-function card(name, image){
+function card(name, image, description){
     this.name = name; 
     this.image = image;
+    this.description = description;
 }
 
 var deck = [ 
@@ -82,8 +83,19 @@ var deck = [
     new card("Knight of Wands", "76_KnightOfWands"),  
     new card("Page of Wands", "77_PageOfWands"),  
     new card("Queen of Wands", "78_QueenOfWands"),  
+];
 
+function getRandom() {
+    let randomNum = Math.floor(Math.random()*78);
+    return randomNum; 
+}
 
+document.getElementById("draw").onclick = function() {
+    var idx = getRandom();
+    var currentCard = deck[idx];
 
-   
-]
+document.getElementById("display").innerHTML = 
+'<h2>' + currentCard.name + '</h2>' +
+'<img src="cards/' + currentCard.image + '.jpg" alt=" ' + currentCard.name + '"/>';
+}
+
