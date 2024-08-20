@@ -1,7 +1,14 @@
-function Card(name, image, description){
+class Card {
+    name: string;
+    image: string;
+    description: string;
+
+
+constructor (name: string, image: string, description: string){
     this.name = name; 
     this.image = image;
     this.description = description;
+}
 }
 
 var deck = [ 
@@ -90,7 +97,7 @@ function getRandom(deck_length) {
     return randomNum; 
 }
 
-document.getElementById("draw").onclick = function() {
+document.getElementById("draw")!.onclick = function() {
     var idx = getRandom(deck.length);
     var currentCard = deck[idx];
 
@@ -108,18 +115,20 @@ displayElement.innerHTML = '<h2>' + currentCard.name + '</h2>' +
     '</div>';
 
     const flipCard = document.querySelector('.flip-card');
-    cardTitle = document.querySelector('h2');
+    const cardTitle = document.querySelector('h2');
 
     flipCard.addEventListener("click", function() {
         flipCard.classList.toggle("flip");
         cardTitle.style.display = "block";
     });
 
+    /*
     flipCard.addEventListener("mouseover", function() {
         if(flipCard.classList.contains("flip")) {
             flipCard.style.transform = "rotateY(180deg)";
         }
     });
+    */
 
     flipCard.addEventListener("mouseout", function() {
         flipCard.style.transform = "rotateY(0deg)";
