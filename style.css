@@ -1,0 +1,97 @@
+@font-face {
+    font-family: 'LaSignora';
+    src: url(LaSignoraDemoVersionRegular-X3jp9.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-card-container {
+    width: 310px;
+    height: 530px;
+    perspective: 1000px;
+}
+
+/* .flip-card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+} */
+
+.flip-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    cursor: pointer;
+}
+
+/*
+.flip-card-container:hover .flip-card{
+    transform: rotateY(180deg);
+}
+*/
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.flip-card-front {
+    background-color: pink;
+    color:aqua;
+}
+
+.flip-card-back {
+    background-color: beige;
+    color:aliceblue;
+    transform: rotateY(180deg);
+}
+
+/*
+.flip {
+    transform: rotateY(180deg);
+}
+*/
+
+.flip-card.flip .flip-card-front {
+    transform: rotateY(180deg);
+}
+
+.flip-card.flip .flip-card-back {
+    transform: rotateY(360deg);
+}
+
+h2 {
+    font-family: 'LaSignora';
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 40px;
+    display: hidden;
+}
+
+#button-wrapper {
+    margin-top: 30px;
+    text-align: center;
+}
