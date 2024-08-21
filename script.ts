@@ -4,7 +4,7 @@ class Card {
     description: string;
 
 
-constructor (name: string, image: string, description: string){
+constructor (name: string, image: string, description: string = "Something cool"){
     this.name = name; 
     this.image = image;
     this.description = description;
@@ -92,30 +92,31 @@ var deck = [
     new Card("Queen of Wands", "78_QueenOfWands"),  
 ];
 
-function getRandom(deck_length) {
-    let randomNum = Math.floor(Math.random()*deck_length);
-    return randomNum; 
+function getRandom(deck_length: number): number {
+    return Math.floor(Math.random()*deck_length);
 }
 
 document.getElementById("draw")!.onclick = function() {
-    var idx = getRandom(deck.length);
-    var currentCard = deck[idx];
+    const idx = getRandom(deck.length);
+    const currentCard = deck[idx];
 
-var displayElement = document.getElementById("display");
-displayElement.innerHTML = '<h2>' + currentCard.name + '</h2>' +
-'<div class="flip-card-container">' +
-        '<div class="flip-card">' +
-            '<div class="flip-card-front">' +
-                '<p>Back</p>' +
-            '</div>' +
-            '<div class="flip-card-back">' +
-                '<img src="cards/' + currentCard.image + '.jpg" alt="' + currentCard.name + '"/>' +
-            '</div>' +
-        '</div>' +
-    '</div>';
+const displayElement = document.getElementById("display") as HTMLDivElement | null;
 
-    const flipCard = document.querySelector('.flip-card');
-    const cardTitle = document.querySelector('h2');
+displayElement!.innerHTML = `<h2>${currentCard.name}</h2>
+<div class="flip-card-container">
+        <div class="flip-card">
+            <div class="flip-card-front">
+                <p>Back</p>
+            </div>
+            <div class="flip-card-back">
+                <img src="cards/${currentCard.image}.jpg" alt="${currentCard.name}" />
+            </div>
+        </div>
+    </div>
+    `;
+
+    const flipCard = document.querySelector('.flip-card') as HTMLElement;
+    const cardTitle = document.querySelector('h2') as HTMLElement;
 
     flipCard.addEventListener("click", function() {
         flipCard.classList.toggle("flip");
