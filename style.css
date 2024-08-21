@@ -16,6 +16,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: ;
 }
 
 .flip-card-container {
@@ -43,11 +44,6 @@ body {
     cursor: pointer;
 }
 
-/*
-.flip-card-container:hover .flip-card{
-    transform: rotateY(180deg);
-}
-*/
 
 .flip-card-front, .flip-card-back {
     position: absolute;

@@ -1,4 +1,4 @@
-class Card {
+export class Card {
     name: string;
     image: string;
     description: string;
@@ -11,7 +11,7 @@ constructor (name: string, image: string, description: string = "Something cool"
 }
 }
 
-var deck = [ 
+export const deck : Card[]  = [ 
     new Card("The Fool", "0_TheFool"),
     new Card("The Magician", "01_TheMagician"),  
     new Card("The High Priestess", "02_TheHighPriestess"),  
@@ -91,48 +91,3 @@ var deck = [
     new Card("Page of Wands", "77_PageOfWands"),  
     new Card("Queen of Wands", "78_QueenOfWands"),  
 ];
-
-function getRandom(deck_length: number): number {
-    return Math.floor(Math.random()*deck_length);
-}
-
-document.getElementById("draw")!.onclick = function() {
-    const idx = getRandom(deck.length);
-    const currentCard = deck[idx];
-
-const displayElement = document.getElementById("display") as HTMLDivElement | null;
-
-displayElement!.innerHTML = `<h2>${currentCard.name}</h2>
-<div class="flip-card-container">
-        <div class="flip-card">
-            <div class="flip-card-front">
-                <p>Back</p>
-            </div>
-            <div class="flip-card-back">
-                <img src="cards/${currentCard.image}.jpg" alt="${currentCard.name}" />
-            </div>
-        </div>
-    </div>
-    `;
-
-    const flipCard = document.querySelector('.flip-card') as HTMLElement;
-    const cardTitle = document.querySelector('h2') as HTMLElement;
-
-    flipCard.addEventListener("click", function() {
-        flipCard.classList.toggle("flip");
-        cardTitle.style.display = "block";
-    });
-
-    /*
-    flipCard.addEventListener("mouseover", function() {
-        if(flipCard.classList.contains("flip")) {
-            flipCard.style.transform = "rotateY(180deg)";
-        }
-    });
-    */
-
-    flipCard.addEventListener("mouseout", function() {
-        flipCard.style.transform = "rotateY(0deg)";
-    });
-}
-
