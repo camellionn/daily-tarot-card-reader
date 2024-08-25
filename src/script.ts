@@ -1,4 +1,5 @@
-import {deck} from './card'
+import {deck} from './card.js'
+import { stars } from './stars.js';
 
 function getRandom(deck_length: number): number {
     return Math.floor(Math.random()*deck_length);
@@ -42,5 +43,9 @@ displayElement!.innerHTML = `<h2>${currentCard.name}</h2>
     flipCard.addEventListener("mouseout", function() {
         flipCard.style.transform = "rotateY(0deg)";
     });
+
+    setInterval(function () {
+        stars();
+    }, 50);
 }
 
