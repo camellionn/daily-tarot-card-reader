@@ -13,10 +13,27 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     width: 100vw;
     height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: ;
+    background-color: #48435c ;
+}
+
+#card-container {
+    font-family: "DM Serif Text", serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    letter-spacing: 2px;
+    font-family: "DM Serif Text", serif;
+    color: white;
 }
 
 .flip-card-container {
@@ -24,7 +41,10 @@ body {
     height: 530px;
     perspective: 1000px;
     border: 20px;
-    border-width: 10px;
+    border-width: 10px; 
+    justify-content: center;
+
+
 }
 
 /* .flip-card-inner {
@@ -78,18 +98,74 @@ body {
 }
 
 .flip-card.flip .flip-card-back {
-    transform: rotateY(360deg);
+    transform: rotateY(0deg);
 }
 
 h2 {
     font-family: 'LaSignora';
     margin-bottom: 30px;
     text-align: center;
-    font-size: 40px;
-    display: hidden;
+    font-size: 50px;
+    text-shadow: 1px 2px black;
+    display: none;
+    color: #f4d06f;
+    letter-spacing: 2px;
 }
 
 #button-wrapper {
-    margin-top: 30px;
     text-align: center;
 }
+
+#button-wrapper :hover {
+    background-color: #f4d06f;
+}
+
+#draw {
+    align-items: center;
+    margin-top: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: #392f5a;
+    width: 7rem;
+    height: 3rem;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.star {
+    position: absolute;
+    top: -20px;
+    color: #fff;
+    animation: animate 5s linear forwards;
+    /* you can set infinite too */
+  }
+  
+  .star::before {
+    content: "\f005";
+    font-family: FontAwesome;
+    text-shadow: 0 0 5px #fff, 0 0 20px #fff, 0 0 50px #fff;
+  }
+  
+  @keyframes animate {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+    }
+  
+    80% {
+      opacity: 1;
+    }
+  
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .star {
+      font-size: 8px;
+    }
+  }
+  
