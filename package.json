@@ -2,5 +2,8 @@
   "dependencies": {
     "typescript": "^5.5.4",
     "type": "module"
-  }
+  },
+
+  "private": false,
+  "homepage": "https://github.com/camellionn/daily-tarot-card-reader/deployments/github-pages"
 }
