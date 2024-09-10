@@ -46,7 +46,6 @@ h1 {
     position: relative;
     z-index: 1;
 
-
 }
 
 /* .flip-card-inner {
@@ -66,6 +65,10 @@ h1 {
     cursor: pointer;
 }
 
+img {
+    height:auto + 10px;
+    width: auto;
+}
 
 .flip-card-front, .flip-card-back {
     position: absolute;
@@ -145,7 +148,7 @@ button, #draw, #display {
     z-index: -10;
     border-radius: 50%;
     top: -20px;
-    color: #fff;
+    color: #f4d06f;
     animation: fadeOut 5s ease-out;
     /* you can set infinite too */
   }
@@ -153,7 +156,7 @@ button, #draw, #display {
   .star::before {
     content: "\f005";
     font-family: FontAwesome;
-    text-shadow: 0 0 5px #fff, 0 0 20px #fff, 0 0 50px #fff;
+    text-shadow: 0 0 5px #f4d06f, 0 0 20px #fff, 0 0 50px #fff;
   }
   
   @keyframes animate {
