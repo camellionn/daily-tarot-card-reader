@@ -43,6 +43,8 @@ h1 {
     border: 20px;
     border-width: 10px; 
     justify-content: center;
+    position: relative;
+    z-index: 1;
 
 
 }
@@ -133,11 +135,18 @@ h2 {
     align-items: center;
 }
 
+button, #draw, #display {
+    position: relative;
+    z-index: 2;
+}
+
 .star {
     position: absolute;
+    z-index: -10;
+    border-radius: 50%;
     top: -20px;
     color: #fff;
-    animation: animate 5s linear forwards;
+    animation: fadeOut 5s ease-out;
     /* you can set infinite too */
   }
   
@@ -161,6 +170,11 @@ h2 {
       transform: translateY(100vh) rotate(360deg);
       opacity: 0;
     }
+  }
+
+  @keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
   }
   
   @media screen and (max-width: 600px) {
