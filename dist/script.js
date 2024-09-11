@@ -34,8 +34,13 @@ document.getElementById("draw").onclick = function () {
         return __awaiter(this, void 0, void 0, function* () {
             flipCard.classList.toggle("flip");
             cardTitle.style.display = "block";
+            const previousReading = displayElement.querySelector('.reading');
+            if (previousReading) {
+                previousReading.remove();
+            }
             const reading = yield getCardReading(currentCard.name);
             const readingElement = document.createElement('p');
+            readingElement.classList.add('reading');
             readingElement.innerText = reading;
             displayElement.appendChild(readingElement);
         });
