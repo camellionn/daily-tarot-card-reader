@@ -27,8 +27,14 @@ displayElement!.innerHTML = `<h2>${currentCard.name}</h2>
     const flipCard = document.querySelector('.flip-card') as HTMLElement;
     const cardTitle = document.querySelector('h2') as HTMLElement;
 
-    flipCard.addEventListener("click", async function() {
-        flipCard.classList.toggle("flip");
+    //Remove any existing event listeners to avoid duplicates
+    flipCard.replaceWith(flipCard.cloneNode(true));
+
+    //Re-select the flip card element after replacing it
+    const newFlipCard = document.querySelector('.flip-card') as HTMLElement;
+
+    newFlipCard.addEventListener("click", async function() {
+        newFlipCard.classList.toggle("flip");
         cardTitle.style.display = "block";
 
         const previousReading = displayElement!.querySelector('.reading');

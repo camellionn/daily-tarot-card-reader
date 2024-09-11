@@ -30,9 +30,13 @@ document.getElementById("draw").onclick = function () {
     `;
     const flipCard = document.querySelector('.flip-card');
     const cardTitle = document.querySelector('h2');
-    flipCard.addEventListener("click", function () {
+    //Remove any existing event listeners to avoid duplicates
+    flipCard.replaceWith(flipCard.cloneNode(true));
+    //Re-select the flip card element after replacing it
+    const newFlipCard = document.querySelector('.flip-card');
+    newFlipCard.addEventListener("click", function () {
         return __awaiter(this, void 0, void 0, function* () {
-            flipCard.classList.toggle("flip");
+            newFlipCard.classList.toggle("flip");
             cardTitle.style.display = "block";
             const previousReading = displayElement.querySelector('.reading');
             if (previousReading) {
