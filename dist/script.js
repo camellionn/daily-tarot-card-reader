@@ -1,3 +1,12 @@
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 import { deck } from './card.js';
 import { stars } from './stars.js';
 function getRandom(deck_length) {
@@ -22,8 +31,14 @@ document.getElementById("draw").onclick = function () {
     const flipCard = document.querySelector('.flip-card');
     const cardTitle = document.querySelector('h2');
     flipCard.addEventListener("click", function () {
-        flipCard.classList.toggle("flip");
-        cardTitle.style.display = "block";
+        return __awaiter(this, void 0, void 0, function* () {
+            flipCard.classList.toggle("flip");
+            cardTitle.style.display = "block";
+            const reading = yield getCardReading(currentCard.name);
+            const readingElement = document.createElement('p');
+            readingElement.innerText = reading;
+            displayElement.appendChild(readingElement);
+        });
     });
     /*
     flipCard.addEventListener("mouseover", function() {
@@ -39,3 +54,23 @@ document.getElementById("draw").onclick = function () {
         stars();
     }, 50);
 };
+//Function to get card reading from the backend
+function getCardReading(card) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const response = yield fetch('http://localhost:3000/generate-reading', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ card }),
+            });
+            const data = yield response.json();
+            return data.reading;
+        }
+        catch (error) {
+            console.error('Error fetching card reading:', error);
+            return 'Error fetching reading. Please try again.';
+        }
+    });
+}

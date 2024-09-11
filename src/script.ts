@@ -27,10 +27,24 @@ displayElement!.innerHTML = `<h2>${currentCard.name}</h2>
     const flipCard = document.querySelector('.flip-card') as HTMLElement;
     const cardTitle = document.querySelector('h2') as HTMLElement;
 
-    flipCard.addEventListener("click", function() {
+    flipCard.addEventListener("click", async function() {
         flipCard.classList.toggle("flip");
         cardTitle.style.display = "block";
+
+        const previousReading = displayElement!.querySelector('.reading');
+        if(previousReading) {
+            previousReading.remove();
+        }
+
+        const reading = await getCardReading(currentCard.name);
+
+        const readingElement = document.createElement('p');
+        readingElement.classList.add('reading');
+        readingElement.innerText = reading;
+        displayElement!.appendChild(readingElement);
     });
+
+
 
     /*
     flipCard.addEventListener("mouseover", function() {
@@ -47,5 +61,24 @@ displayElement!.innerHTML = `<h2>${currentCard.name}</h2>
     setInterval(function () {
         stars();
     }, 50);
+};
+
+//Function to get card reading from the backend
+async function getCardReading(card: string): Promise<string> {
+    try {
+        const response = await fetch('http://localhost:3000/generate-reading', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ card }),
+        });
+
+        const data = await response.json();
+        return data.reading;
+    } catch (error) {
+        console.error('Error fetching card reading:', error);
+        return 'Error fetching reading. Please try again.';
+    }
 }
 
