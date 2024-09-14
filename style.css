@@ -36,12 +36,24 @@ h1 {
     color: white;
 }
 
+h2 {
+    font-family: 'LaSignora';
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 40px;
+    text-shadow: 1px 2px black;
+    display: none;
+    color: #f4d06f;
+    letter-spacing: 2px;
+}
+
 .flip-card-container {
-    width: 310px;
-    height: 530px;
+    width: 170px;
+    height: 290px;
     perspective: 1000px;
     border: 20px;
     border-width: 10px; 
+    margin-left: 55px;
     justify-content: center;
     position: relative;
     z-index: 1;
@@ -66,7 +78,7 @@ h1 {
 }
 
 img {
-    height:auto + 10px;
+    height: 280px;
     width: auto;
 }
 
@@ -106,17 +118,6 @@ img {
     transform: rotateY(0deg);
 }
 
-h2 {
-    font-family: 'LaSignora';
-    margin-bottom: 30px;
-    text-align: center;
-    font-size: 50px;
-    text-shadow: 1px 2px black;
-    display: none;
-    color: #f4d06f;
-    letter-spacing: 2px;
-}
-
 #button-wrapper {
     text-align: center;
 }
@@ -148,7 +149,7 @@ button, #draw, #display {
     z-index: -10;
     border-radius: 50%;
     top: -20px;
-    color: #f4d06f;
+    color: #f6e7bd;
     animation: fadeOut 5s ease-out;
     /* you can set infinite too */
   }

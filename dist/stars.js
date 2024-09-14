@@ -1,6 +1,11 @@
+let activeStars = 0;
+const maxStars = 200;
 export function stars() {
+    if (activeStars >= maxStars)
+        return;
     let e = document.createElement("div");
     e.classList.add("star");
+    activeStars++;
     //Set initial position
     e.style.position = "absolute";
     e.style.left = Math.random() * innerWidth + "px";
@@ -15,9 +20,10 @@ export function stars() {
     setTimeout(function () {
         e.style.top = innerHeight + "px";
         e.style.opacity = "0";
-    }, 50);
+    }, 150);
     setTimeout(function () {
         document.body.removeChild(e);
+        activeStars--;
     }, 5000);
 }
-setInterval(stars, 200);
+setInterval(stars, 500);
