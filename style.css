@@ -47,17 +47,30 @@ h2 {
     letter-spacing: 2px;
 }
 
+h3 {
+    font-family: "DM Serif Text", serif;
+    letter-spacing: 1px;
+    font-size: 20px;
+    color: white;
+    text-shadow: 1px 2px black;
+    text-align: center;
+}
+
+#date-time {
+    font-family: "DM Serif Text", serif;
+    color:#f4d06f;
+    text-shadow: 1px 2px rgb(41, 41, 41);
+    letter-spacing: 1px;
+}
 .flip-card-container {
     width: 170px;
     height: 290px;
     perspective: 1000px;
     border: 20px;
     border-width: 10px; 
-    margin-left: 55px;
     justify-content: center;
     position: relative;
     z-index: 1;
-
 }
 
 /* .flip-card-inner {
@@ -102,6 +115,7 @@ img {
     background-color: beige;
     color:aliceblue;
     transform: rotateY(180deg);
+    margin-left: 60px;
 }
 
 /*
