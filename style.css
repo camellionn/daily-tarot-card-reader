@@ -68,6 +68,7 @@ h3 {
     perspective: 1000px;
     border: 20px;
     border-width: 10px; 
+    margin-left: 75px;
     justify-content: center;
     position: relative;
     z-index: 1;
