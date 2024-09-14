@@ -14,8 +14,21 @@
 <body>
     <div class="class-container">
         <div id = "card-container">
-                    <div id="display">Click on <h1>Draw A Card</h1> to see your tarot card of the day!</div>
-                 </div>
+            <div id="display">Click on<h1>Draw A Card</h1> to see your tarot card of the day!</div>
+        </div>
+        <div id = "date-and-time">
+            <h1>Reading for: </h1>
+            <span id="datetime"></span>
+
+            <script>
+                function updateDateTime() {
+                    const now = new Date();
+                    const currentDateTime = now.toLocaleString();
+                    document.querySelector('#datetime').textContent = currentDateTime;
+                }
+                setInterval(updateDateTime,1000);
+            </script>
+        </div>
         <div id = "button-wrapper">
         <button id="draw">Draw A Card</button>
         </div>
