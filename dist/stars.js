@@ -1,5 +1,5 @@
 let activeStars = 0;
-const maxStars = 200;
+const maxStars = 150;
 export function stars() {
     if (activeStars >= maxStars)
         return;
