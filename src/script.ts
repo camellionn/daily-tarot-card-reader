@@ -1,6 +1,28 @@
 import {deck} from './card.js'
 import { stars } from './stars.js';
 
+//Throttle function implementation for stars
+function throttle(func: Function, limit: number) {
+    let lastFunc: ReturnType<typeof setTimeout>;
+    let lastRan: number;
+
+    return function(...args: any[]) {
+        const now = Date.now();
+        if(lastRan && now < lastRan + limit) {
+            clearTimeout(lastFunc);
+            lastFunc = setTimeout(function() {
+                lastRan = now;
+                func(...args);
+            }, limit - (now - lastRan));
+        } else {
+            lastRan = now;
+            func(...args);
+        }
+    };
+}
+
+const throttledStars = throttle(stars, 500);
+
 function getRandom(deck_length: number): number {
     return Math.floor(Math.random()*deck_length);
 }
@@ -24,16 +46,10 @@ displayElement!.innerHTML = `<h2>${currentCard.name}</h2>
     </div>
     `;
 
-    const flipCard = document.querySelector('.flip-card') as HTMLElement;
+    const newFlipCard = document.querySelector('.flip-card') as HTMLElement;
     const cardTitle = document.querySelector('h2') as HTMLElement;
 
-    //Remove any existing event listeners to avoid duplicates
-    flipCard.replaceWith(flipCard.cloneNode(true));
-
-    //Re-select the flip card element after replacing it
-    const newFlipCard = document.querySelector('.flip-card') as HTMLElement;
-
-    newFlipCard.addEventListener("click", async function() {
+    newFlipCard.onclick = async function handleCardFlip() {
         newFlipCard.classList.toggle("flip");
         cardTitle.style.display = "block";
 
@@ -48,8 +64,7 @@ displayElement!.innerHTML = `<h2>${currentCard.name}</h2>
         readingElement.classList.add('reading');
         readingElement.innerText = reading;
         displayElement!.appendChild(readingElement);
-    });
-
+    };
 
 
     /*
@@ -60,13 +75,11 @@ displayElement!.innerHTML = `<h2>${currentCard.name}</h2>
     });
     */
 
-    flipCard.addEventListener("mouseout", function() {
-        flipCard.style.transform = "rotateY(0deg)";
+    newFlipCard.addEventListener("mouseout", function() {
+       newFlipCard.style.transform = "rotateY(0deg)";
     });
 
-    setInterval(function () {
-        stars();
-    }, 50);
+    setInterval(throttledStars, 500);
 };
 
 //Function to get card reading from the backend

@@ -68,7 +68,6 @@ h3 {
     perspective: 1000px;
     border: 20px;
     border-width: 10px; 
-    margin-left: 75px;
     justify-content: center;
     position: relative;
     z-index: 1;
@@ -116,7 +115,7 @@ img {
     background-color: beige;
     color:aliceblue;
     transform: rotateY(180deg);
-    margin-left: 60px;
+    margin-left: 230px;
 }
 
 /*
@@ -157,6 +156,10 @@ img {
 button, #draw, #display {
     position: relative;
     z-index: 2;
+}
+
+#date-time {
+    text-align: center;
 }
 
 .star {

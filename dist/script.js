@@ -9,6 +9,26 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { deck } from './card.js';
 import { stars } from './stars.js';
+//Throttle function implementation for stars
+function throttle(func, limit) {
+    let lastFunc;
+    let lastRan;
+    return function (...args) {
+        const now = Date.now();
+        if (lastRan && now < lastRan + limit) {
+            clearTimeout(lastFunc);
+            lastFunc = setTimeout(function () {
+                lastRan = now;
+                func(...args);
+            }, limit - (now - lastRan));
+        }
+        else {
+            lastRan = now;
+            func(...args);
+        }
+    };
+}
+const throttledStars = throttle(stars, 500);
 function getRandom(deck_length) {
     return Math.floor(Math.random() * deck_length);
 }
@@ -28,13 +48,9 @@ document.getElementById("draw").onclick = function () {
         </div>
     </div>
     `;
-    const flipCard = document.querySelector('.flip-card');
-    const cardTitle = document.querySelector('h2');
-    //Remove any existing event listeners to avoid duplicates
-    flipCard.replaceWith(flipCard.cloneNode(true));
-    //Re-select the flip card element after replacing it
     const newFlipCard = document.querySelector('.flip-card');
-    newFlipCard.addEventListener("click", function () {
+    const cardTitle = document.querySelector('h2');
+    newFlipCard.onclick = function handleCardFlip() {
         return __awaiter(this, void 0, void 0, function* () {
             newFlipCard.classList.toggle("flip");
             cardTitle.style.display = "block";
@@ -48,7 +64,7 @@ document.getElementById("draw").onclick = function () {
             readingElement.innerText = reading;
             displayElement.appendChild(readingElement);
         });
-    });
+    };
     /*
     flipCard.addEventListener("mouseover", function() {
         if(flipCard.classList.contains("flip")) {
@@ -56,12 +72,10 @@ document.getElementById("draw").onclick = function () {
         }
     });
     */
-    flipCard.addEventListener("mouseout", function () {
-        flipCard.style.transform = "rotateY(0deg)";
+    newFlipCard.addEventListener("mouseout", function () {
+        newFlipCard.style.transform = "rotateY(0deg)";
     });
-    setInterval(function () {
-        stars();
-    }, 50);
+    setInterval(throttledStars, 500);
 };
 //Function to get card reading from the backend
 function getCardReading(card) {

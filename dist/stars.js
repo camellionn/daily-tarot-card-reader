@@ -26,4 +26,3 @@ export function stars() {
         activeStars--;
     }, 5000);
 }
-setInterval(stars, 500);
