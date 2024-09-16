@@ -22,7 +22,7 @@ export const deck : Card[]  = [
     new Card("The Chariot", "07_TheChariot"),  
     new Card("Strength", "08_Strength"),  
     new Card("The Hermit", "09_TheHermit"),  
-    new Card("The Wheel of Fortune", "10_TheWheelOfFortune"),  
+    new Card("Wheel of Fortune", "10_TheWheelOfFortune"),  
     new Card("Justice", "11_Justice"),  
     new Card("The Hanged Man", "12_TheHangedMan"),  
     new Card("Death", "13_Death"),  
