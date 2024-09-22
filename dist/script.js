@@ -36,11 +36,12 @@ document.getElementById("draw").onclick = function () {
     const idx = getRandom(deck.length);
     const currentCard = deck[idx];
     const displayElement = document.getElementById("display");
+    const displayBox = document.getElementById("display-box");
     displayElement.innerHTML = `<h2>${currentCard.name}</h2>
 <div class="flip-card-container">
         <div class="flip-card">
             <div class="flip-card-front">
-                <p>Back</p>
+                <img src="card-front.png" alt="card front">
             </div>
             <div class="flip-card-back">
                 <img src="cards/${currentCard.image}.jpg" alt="${currentCard.name}" />
@@ -54,7 +55,7 @@ document.getElementById("draw").onclick = function () {
         return __awaiter(this, void 0, void 0, function* () {
             newFlipCard.classList.toggle("flip");
             cardTitle.style.display = "block";
-            const previousReading = displayElement.querySelector('.reading');
+            const previousReading = displayBox.querySelector('.reading');
             if (previousReading) {
                 previousReading.remove();
             }
@@ -62,7 +63,8 @@ document.getElementById("draw").onclick = function () {
             const readingElement = document.createElement('p');
             readingElement.classList.add('reading');
             readingElement.innerText = reading;
-            displayElement.appendChild(readingElement);
+            displayBox.appendChild(readingElement);
+            displayBox.style.display = "block";
         });
     };
     /*

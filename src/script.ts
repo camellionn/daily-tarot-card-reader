@@ -32,12 +32,13 @@ document.getElementById("draw")!.onclick = function() {
     const currentCard = deck[idx];
 
 const displayElement = document.getElementById("display") as HTMLDivElement | null;
+const displayBox = document.getElementById("display-box") as HTMLDivElement | null;
 
 displayElement!.innerHTML = `<h2>${currentCard.name}</h2>
 <div class="flip-card-container">
         <div class="flip-card">
             <div class="flip-card-front">
-                <p>Back</p>
+                <img src="card-front.png" alt="card front">
             </div>
             <div class="flip-card-back">
                 <img src="cards/${currentCard.image}.jpg" alt="${currentCard.name}" />
@@ -53,7 +54,7 @@ displayElement!.innerHTML = `<h2>${currentCard.name}</h2>
         newFlipCard.classList.toggle("flip");
         cardTitle.style.display = "block";
 
-        const previousReading = displayElement!.querySelector('.reading');
+        const previousReading = displayBox!.querySelector('.reading');
         if(previousReading) {
             previousReading.remove();
         }
@@ -63,7 +64,9 @@ displayElement!.innerHTML = `<h2>${currentCard.name}</h2>
         const readingElement = document.createElement('p');
         readingElement.classList.add('reading');
         readingElement.innerText = reading;
-        displayElement!.appendChild(readingElement);
+        displayBox!.appendChild(readingElement);
+
+        displayBox!.style.display = "block";
     };
 
 
