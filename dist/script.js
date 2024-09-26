@@ -51,10 +51,12 @@ document.getElementById("draw").onclick = function () {
     `;
     const newFlipCard = document.querySelector('.flip-card');
     const cardTitle = document.querySelector('h2');
+    const reDraw = document.querySelector('h4');
     newFlipCard.onclick = function handleCardFlip() {
         return __awaiter(this, void 0, void 0, function* () {
             newFlipCard.classList.toggle("flip");
             cardTitle.style.display = "block";
+            reDraw.style.display = "block";
             const previousReading = displayBox.querySelector('.reading');
             if (previousReading) {
                 previousReading.remove();
@@ -77,7 +79,7 @@ document.getElementById("draw").onclick = function () {
     newFlipCard.addEventListener("mouseout", function () {
         newFlipCard.style.transform = "rotateY(0deg)";
     });
-    setInterval(throttledStars, 500);
+    setInterval(throttledStars, 300);
 };
 //Function to get card reading from the backend
 function getCardReading(card) {

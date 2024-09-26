@@ -49,10 +49,12 @@ displayElement!.innerHTML = `<h2>${currentCard.name}</h2>
 
     const newFlipCard = document.querySelector('.flip-card') as HTMLElement;
     const cardTitle = document.querySelector('h2') as HTMLElement;
+    const reDraw = document.querySelector('h4') as HTMLElement;
 
     newFlipCard.onclick = async function handleCardFlip() {
         newFlipCard.classList.toggle("flip");
         cardTitle.style.display = "block";
+        reDraw.style.display = "block";
 
         const previousReading = displayBox!.querySelector('.reading');
         if(previousReading) {
@@ -82,7 +84,7 @@ displayElement!.innerHTML = `<h2>${currentCard.name}</h2>
        newFlipCard.style.transform = "rotateY(0deg)";
     });
 
-    setInterval(throttledStars, 500);
+    setInterval(throttledStars, 300);
 };
 
 //Function to get card reading from the backend
