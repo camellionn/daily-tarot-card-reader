@@ -51,6 +51,10 @@ displayElement!.innerHTML = `<h2>${currentCard.name}</h2>
     const cardTitle = document.querySelector('h2') as HTMLElement;
     const reDraw = document.querySelector('h4') as HTMLElement;
 
+    setTimeout(() => {
+        newFlipCard.classList.add("animate");
+    }, 10);
+
     newFlipCard.onclick = async function handleCardFlip() {
         newFlipCard.classList.toggle("flip");
         cardTitle.style.display = "block";

@@ -52,6 +52,9 @@ document.getElementById("draw").onclick = function () {
     const newFlipCard = document.querySelector('.flip-card');
     const cardTitle = document.querySelector('h2');
     const reDraw = document.querySelector('h4');
+    setTimeout(() => {
+        newFlipCard.classList.add("animate");
+    }, 10);
     newFlipCard.onclick = function handleCardFlip() {
         return __awaiter(this, void 0, void 0, function* () {
             newFlipCard.classList.toggle("flip");
