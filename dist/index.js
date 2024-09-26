@@ -101,6 +101,9 @@ const readings = {
 // Route to handle tarot readings
 app.post('/generate-reading', (req, res) => {
     const { card } = req.body;
+    if (!card) {
+        return res.status(400).json({ error: "Card name is required" });
+    }
     const reading = readings[card] || "No specific reading available for this card.";
     res.json({ reading });
 });
