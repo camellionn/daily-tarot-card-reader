@@ -24,6 +24,7 @@ body {
 }
 
 #card-container {
+    margin-top: 70px;
     font-family: "DM Serif Text", serif;
     text-align: center;
     display: flex;
@@ -56,6 +57,18 @@ h3 {
     text-shadow: 1px 2px rgb(0, 0, 0);
 }
 
+.redraw h4 {
+    font-family: "DM Serif Text", serif;
+    color: white;
+    text-shadow: 1px 2px rgb(41, 41, 41);
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-align: center;
+    display: none;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
 #date-time {
     display: flex;
     justify-content: center;
@@ -82,8 +95,6 @@ h3 {
     z-index: 1;
     margin-bottom: 20px;
 }
-
-
 
 /* .flip-card-inner {
     position: absolute;
@@ -131,8 +142,11 @@ img {
 .flip-card-back {
     background-color: beige;
     color:aliceblue;
+    margin-left: 20px;
     transform: rotateY(180deg);
     justify-content: center;
+    align-self: center;
+    align-items: center;
 }
 
 /*
@@ -149,40 +163,63 @@ img {
     transform: rotateY(0deg);
 }
 
+button {
+    margin-bottom: 10px;
+}
+
 #button-wrapper {
+    font-family: "DM Serif Text", serif;
     text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
 }
 
 #button-wrapper :hover {
     background-color: #f4d06f;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 
 #display-box {
-    width:500px; /* Adjust width as needed */
+    width:500px; 
     border: solid #f4d06f 1px;
-    height: auto;
+    height: 120px;
     padding: 20px;
-    border-radius: 2px;
+    border-radius: 20px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     display: none;
     background-color: #48435c ;
+    position: relative;
+}
+
+#display-box::before {
+    content: "⋆˙⟡ Reading ⋆˙⟡";
+    font-family: "DM Serif Text", serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 2px rgb(41, 41, 41);
+    letter-spacing: 2px;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform:  translateX(-50%);
+    background-color: #48435c ;
+    padding: 0 10px;
 }
 
 
 #draw {
-    align-items: center;
-    margin-top: 30px;
+    align-self: flex-start; /* Move the button to the top */
+    margin-top: 0; /* Adjust margin as needed */
     font-weight: bold;
     text-align: center;
     color: #392f5a;
     width: 7rem;
     height: 3rem;
     border-radius: 20px;
-    justify-content: center;
-    align-items: center;
 }
 
 button, #draw, #display {
