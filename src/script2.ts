@@ -2,7 +2,7 @@ import { deck } from './card.js';
 import { stars } from './stars.js';
 
 // Throttle function implementation for stars
-function throttle(func: Function, limit: number) {
+function throttle(func: (...args: any[]) => void, limit: number): (...args: any[]) => void {
     let lastFunc: ReturnType<typeof setTimeout>;
     let lastRan: number;
 
@@ -29,7 +29,7 @@ function getRandom(deck_length: number): number {
 
 // Handle drawing 3 unique cards
 document.getElementById('drawn-cards')!.onclick = function() {
-    const drawCardsContainer = document.getElementById("display") as HTMLDivElement | null;
+    const drawCardsContainer = document.getElementById("cards-container") as HTMLDivElement | null;
     if (!drawCardsContainer) return;
 
     drawCardsContainer.innerHTML = ''; // Clear previous cards
@@ -83,12 +83,14 @@ document.getElementById('drawn-cards')!.onclick = function() {
         // Handle card flip
         flipCard.onclick = function handleCardFlip() {
             flipCard.classList.toggle('flip');
-            cardTitle.style.display = 'block';
+            cardTitle.style.display = flipCard.classList.contains('flip') ? 'block' : 'none';
         };
 
         // Reset rotation on mouseout
         flipCard.addEventListener('mouseout', function() {
-            flipCard.style.transform = "rotateY(0deg);"
+            //flipCard.style.transform = "rotateY(0deg);"
+            flipCard.classList.remove('flip');
+            cardTitle.style.display ='none';
         });
     });
 

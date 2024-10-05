@@ -25,7 +25,7 @@ function getRandom(deck_length) {
 }
 // Handle drawing 3 unique cards
 document.getElementById('drawn-cards').onclick = function () {
-    const drawCardsContainer = document.getElementById("display");
+    const drawCardsContainer = document.getElementById("cards-container");
     if (!drawCardsContainer)
         return;
     drawCardsContainer.innerHTML = ''; // Clear previous cards
@@ -71,11 +71,13 @@ document.getElementById('drawn-cards').onclick = function () {
         // Handle card flip
         flipCard.onclick = function handleCardFlip() {
             flipCard.classList.toggle('flip');
-            cardTitle.style.display = 'block';
+            cardTitle.style.display = flipCard.classList.contains('flip') ? 'block' : 'none';
         };
         // Reset rotation on mouseout
         flipCard.addEventListener('mouseout', function () {
-            flipCard.style.transform = "rotateY(0deg);";
+            //flipCard.style.transform = "rotateY(0deg);"
+            flipCard.classList.remove('flip');
+            cardTitle.style.display = 'none';
         });
     });
     setInterval(throttledStars, 300); // Start stars animation
