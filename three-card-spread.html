@@ -11,18 +11,16 @@
     </style>
 </head>
 <body>
-    <div id="sidebar">
+    <div class="topnav">
         <h5>Card Draw Options</h5>
-        <ul>
-            <li><a href="index.html">Daily Reading (Single Card)</a></li>
-            <li><a href="three-card-spread.html">Three-Card Spread</a></li>
-        </ul>
+        <a class="active" href="index.html">Daily Reading (Single Card)</a>
+        <a href="three-card-spread.html">Three-Card Spread</a>
     </div>
     
     <div id="content">
         <h2>Three Card Spread</h2>
-        <p>Select your 3 cards!</p>
-        <div class="card-container">
+        <h1>Select your 3 cards!</h1>
+        <div id="cards-container">
             <div id="display"></div>
         </div>
         <div id="date-time">
@@ -31,14 +29,11 @@
         <div class="redraw">
             <h4>Don't resonate with today's cards? Draw again!</h4>
         </div>
-        
+    
         <!-- Button Wrapper -->
         <div id="button-wrapper" style="margin-bottom: 20px;">
             <button id="drawn-cards">Draw 3 Cards</button>
         </div>
-
-        <!-- Container for drawn cards -->
-        <div id="cards-container"></div> 
     </div>
 </body>
 <script type="module" src="dist/script2.js"></script>
