@@ -90,11 +90,9 @@ out
 # Nuxt.js build / generate output
 .nuxt
 
-
 # Gatsby files
 .cache/
-# Comment in the public line in if your project uses Gatsby and not Next.js
-# https://nextjs.org/blog/next-9-1#public-directory-support
+# Uncomment the public line if your project uses Gatsby and not Next.js
 # public
 
 # vuepress build output
@@ -128,3 +126,6 @@ out
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# TypeScript output directory
+dist/               # Add this line to ignore the output directory
