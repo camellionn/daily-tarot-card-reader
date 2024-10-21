@@ -1,4 +1,7 @@
 export class Card {
+    name;
+    image;
+    description;
     constructor(name, image, description = "Something cool") {
         this.name = name;
         this.image = image;

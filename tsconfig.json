@@ -3,7 +3,9 @@
     "target": "ESNext",                          // Specify ECMAScript target version
     "module": "ESNext",                          // Specify module code generation
     "moduleResolution": "node",                  // Use Node.js style module resolution
-    "esModuleInterop": true,                     // Enables emit interoperability between CommonJS and ES Modules
+    "esModuleInterop": true,      
+    "outDir": "./dist",                       // Specify the output directory for compiled files
+    "rootDir": "./src",                     // Enables emit interoperability between CommonJS and ES Modules
     "skipLibCheck": true,                        // Skip type checking of declaration files
     "forceConsistentCasingInFileNames": true,   // Disallow inconsistently-cased references to the same file
     "strict": true,                              // Enable all strict type-checking options
