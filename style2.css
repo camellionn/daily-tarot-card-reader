@@ -1,230 +1,235 @@
-
 @font-face {
-    font-family: 'LaSignora';
-    src: url(LaSignoraDemoVersionRegular-X3jp9.ttf);
+  font-family: "LaSignora";
+  src: url(LaSignoraDemoVersionRegular-X3jp9.ttf);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    width: 100vw;
-    height: 100vh;
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #48435c ;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #48435c;
 }
 
 h1 {
-    letter-spacing: 2px;
-    font-family: "DM Serif Text", serif;
-    color: white;
-    text-align: center;
+  letter-spacing: 2px;
+  font-family: "DM Serif Text", serif;
+  color: white;
+  text-align: center;
 }
 
 h2 {
-    font-family: 'LaSignora';
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 40px;
-    text-shadow: 1px 2px black;
-    display: none;
-    color: #f4d06f;
-    letter-spacing: 2px;
+  font-family: "LaSignora";
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 40px;
+  text-shadow: 1px 2px black;
+  display: none;
+  color: #f4d06f;
+  letter-spacing: 2px;
 }
 
 h3 {
-    font-family: "DM Serif Text", serif;
-    letter-spacing: 2px;
-    color:#eeeeee;
-    text-shadow: 1px 2px rgb(0, 0, 0);
+  font-family: "DM Serif Text", serif;
+  letter-spacing: 2px;
+  color: #eeeeee;
+  text-shadow: 1px 2px rgb(0, 0, 0);
 }
 
 h4 {
-    font-family: "DM Serif Text", serif;
-    color: white;
-    text-shadow: 1px 2px rgb(41, 41, 41);
-    font-size: 15px;
-    letter-spacing: 1px;
-    text-align: center;
-    display: none;
-    margin-top: 5px;
-    margin-bottom: 10px;
+  font-family: "DM Serif Text", serif;
+  color: white;
+  text-shadow: 1px 2px rgb(41, 41, 41);
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-align: center;
+  display: none;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 #date-time {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "DM Serif Text", serif;
-    color:#f4d06f;
-    text-shadow: 1px 2px rgb(41, 41, 41);
-    letter-spacing: 1px;
-    text-align: center;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "DM Serif Text", serif;
+  color: #f4d06f;
+  text-shadow: 1px 2px rgb(41, 41, 41);
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 #date-time h3 {
-    margin-right: 10px;
+  margin-right: 10px;
 }
-
 
 /* Navigation Bar */
 .topnav {
-    overflow: hidden;
-    background-color: #333;
+  overflow: hidden;
+  background-color: #333;
 }
 
 .topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
 .topnav a:hover {
-    background-color: #ddd;
-    color: black;
+  background-color: #ddd;
+  color: black;
 }
 
 /* Cards Container */
 #cards-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; /* Allows wrapping if screen is too small */
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allows wrapping if screen is too small */
+  margin-top: 20px;
 }
 
 @keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px); /* Move up */
-    }
-    100% {
-        transform: translateY(0); /* Back to original position */
-    } 
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Move up */
+  }
+  100% {
+    transform: translateY(0); /* Back to original position */
+  }
 }
 
 .card-display {
-    perspective: 1000px; /* Perspective for 3D effect */
-    margin: 20px;
+  perspective: 1000px; /* Perspective for 3D effect */
+  margin: 20px;
 }
 
 .flip-card-container {
-    display: flex;
+  display: flex;
 }
 
 .flip-card {
-    width: 200px; /* Adjust width according to your design */
-    height: 300px; /* Adjust height according to your design */
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.6s;
-    cursor: pointer;
+  width: 200px; /* Adjust width according to your design */
+  height: 300px; /* Adjust height according to your design */
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  cursor: pointer;
 }
 
 .flip-card.animate {
-    animation: float 1s ease forwards;
+  animation: float 1s ease forwards;
 }
 
 img {
-    height: 280px;
-    width: 160px;
+  height: 280px;
+  width: 160px;
 }
 
 .flip-card-front,
 .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden; /* Hides the back when facing away */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hides the back when facing away */
 }
 
 .flip-card.flip .flip-card-front {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .flip-card.flip .flip-card-back {
-    transform: rotateY(0deg);
+  transform: rotateY(0deg);
 }
 
 button {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 #button-wrapper {
-    font-family: "DM Serif Text", serif;
-    text-align: center;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
+  font-family: "DM Serif Text", serif;
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 #button-wrapper :hover {
-    background-color: #f4d06f;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  background-color: #f4d06f;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .star {
-    position: absolute;
-    z-index: -10;
-    border-radius: 50%;
-    top: -20px;
-    color: #f6e7bd;
-    animation: fadeOut 5s ease-out;
-    /* you can set infinite too */
-  }
-  
-  .star::before {
-    content: "\f005";
-    font-family: FontAwesome;
-    text-shadow: 0 0 5px #f4d06f, 0 0 20px #fff, 0 0 50px #fff;
-  }
-
-  @media (max-width: 768px) {
-    #display-box {
-        width: 100%;
-        padding: 10px;
-    }
-    h1, h2, h4 {
-        font-size: 1.5rem; 
-    }
+  position: absolute;
+  z-index: -10;
+  border-radius: 50%;
+  top: -20px;
+  color: #f6e7bd;
+  animation: fadeOut 5s ease-out;
+  /* you can set infinite too */
 }
 
-  
-  @keyframes animate {
-    0% {
-      transform: translateY(0) rotate(0deg);
-      opacity: 1;
-    }
-  
-    80% {
-      opacity: 1;
-    }
-  
-    100% {
-      transform: translateY(100vh) rotate(360deg);
-      opacity: 0;
-    }
+.star::before {
+  content: "\f005";
+  font-family: FontAwesome;
+  text-shadow:
+    0 0 5px #f4d06f,
+    0 0 20px #fff,
+    0 0 50px #fff;
+}
+
+@media (max-width: 768px) {
+  #display-box {
+    width: 100%;
+    padding: 10px;
+  }
+  h1,
+  h2,
+  h4 {
+    font-size: 1.5rem;
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
   }
 
-  @keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
+  80% {
+    opacity: 1;
   }
-  
-  @media screen and (max-width: 600px) {
-    .star {
-      font-size: 8px;
-    }
+
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
   }
-  
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .star {
+    font-size: 8px;
+  }
+}

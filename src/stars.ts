@@ -2,37 +2,35 @@ let activeStars = 0;
 const maxStars = 150;
 
 export function stars() {
-  if(activeStars >= maxStars) return;
-    let e = document.createElement("div");
-    e.classList.add("star");
-    activeStars++;
+  if (activeStars >= maxStars) return;
+  const e = document.createElement("div");
+  e.classList.add("star");
+  activeStars++;
 
-    //Set initial position
-    e.style.position = "absolute";
-    e.style.left = Math.random() * innerWidth + "px";
-    e.style.top = "0px"; //Start at top of the screen
-  
-    let size = Math.random() * 12 + 5;
-  
+  //Set initial position
+  e.style.position = "absolute";
+  e.style.left = Math.random() * innerWidth + "px";
+  e.style.top = "0px"; //Start at top of the screen
 
-    e.style.width = `${size}px`;
-    e.style.height = `${size}px`;
+  const size = Math.random() * 12 + 5;
 
-    e.style.background = "none";
-    e.style.borderRadius = "0";
+  e.style.width = `${size}px`;
+  e.style.height = `${size}px`;
 
-    document.body.appendChild(e);
+  e.style.background = "none";
+  e.style.borderRadius = "0";
 
-    e.style.transition = `top 5s linear, opacity 5s ease-out`;
+  document.body.appendChild(e);
 
-    setTimeout(function () {
-      e.style.top = innerHeight + "px";
-      e.style.opacity = "0";
-    }, 150);
+  e.style.transition = `top 5s linear, opacity 5s ease-out`;
 
-    setTimeout(function () {
-      document.body.removeChild(e);
-      activeStars--;
-    }, 5000);
-  }
-  
+  setTimeout(function () {
+    e.style.top = innerHeight + "px";
+    e.style.opacity = "0";
+  }, 150);
+
+  setTimeout(function () {
+    document.body.removeChild(e);
+    activeStars--;
+  }, 5000);
+}

@@ -1,126 +1,125 @@
-
-
 @font-face {
-    font-family: 'LaSignora';
-    src: url(LaSignoraDemoVersionRegular-X3jp9.ttf);
+  font-family: "LaSignora";
+  src: url(LaSignoraDemoVersionRegular-X3jp9.ttf);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    width: 100vw;
-    height: 100vh;
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #48435c ;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #48435c;
 }
 
 .topnav {
-    top: 40px; 
-    width: 100%; 
-    margin-top: 40px;
-    overflow: auto;
-    background-color: #333;
-    position: relative;
-    flex-shrink: 0;
+  top: 40px;
+  width: 100%;
+  margin-top: 40px;
+  overflow: auto;
+  background-color: #333;
+  position: relative;
+  flex-shrink: 0;
 }
 
 .topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
 .topnav a:hover {
-    background-color: #ddd;
-    color: black;
+  background-color: #ddd;
+  color: black;
 }
 
 #card-container {
-    margin-top: 70px;
-    font-family: "DM Serif Text", serif;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  margin-top: 70px;
+  font-family: "DM Serif Text", serif;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 h1 {
-    letter-spacing: 2px;
-    font-family: "DM Serif Text", serif;
-    color: white;
+  letter-spacing: 2px;
+  font-family: "DM Serif Text", serif;
+  color: white;
 }
 
 h2 {
-    font-family: 'LaSignora';
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 40px;
-    text-shadow: 1px 2px black;
-    display: none;
-    color: #f4d06f;
-    letter-spacing: 2px;
+  font-family: "LaSignora";
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 40px;
+  text-shadow: 1px 2px black;
+  display: none;
+  color: #f4d06f;
+  letter-spacing: 2px;
 }
 
 h3 {
-    font-family: "DM Serif Text", serif;
-    letter-spacing: 2px;
-    color:#eeeeee;
-    text-shadow: 1px 2px rgb(0, 0, 0);
+  font-family: "DM Serif Text", serif;
+  letter-spacing: 2px;
+  color: #eeeeee;
+  text-shadow: 1px 2px rgb(0, 0, 0);
 }
 
 .redraw h4 {
-    font-family: "DM Serif Text", serif;
-    color: white;
-    text-shadow: 1px 2px rgb(41, 41, 41);
-    font-size: 15px;
-    letter-spacing: 1px;
-    text-align: center;
-    display: none;
-    margin-top: 5px;
-    margin-bottom: 10px;
+  font-family: "DM Serif Text", serif;
+  color: white;
+  text-shadow: 1px 2px rgb(41, 41, 41);
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-align: center;
+  display: none;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 #date-time {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "DM Serif Text", serif;
-    color:#f4d06f;
-    text-shadow: 1px 2px rgb(41, 41, 41);
-    letter-spacing: 1px;
-    text-align: center;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "DM Serif Text", serif;
+  color: #f4d06f;
+  text-shadow: 1px 2px rgb(41, 41, 41);
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 #date-time h3 {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .flip-card-container {
-    width: 170px;
-    height: 290px;
-    perspective: 1000px;
-    border: 20px;
-    border-width: 10px; 
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-    margin-bottom: 20px;
+  width: 170px;
+  height: 290px;
+  perspective: 1000px;
+  border: 20px;
+  border-width: 10px;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 20px;
 }
 
 /* .flip-card-inner {
@@ -131,64 +130,65 @@ h3 {
     transition: transform 0.8s;
 } */
 @keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px); /* Move up */
-    }
-    100% {
-        transform: translateY(0); /* Back to original position */
-    } 
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Move up */
+  }
+  100% {
+    transform: translateY(0); /* Back to original position */
+  }
 }
 
 .flip-card {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform-style: preserve-3d;
-    transition: transform 0.5s ease;
-    cursor: pointer;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+  cursor: pointer;
 }
 
 .flip-card.animate {
-    animation: float 1s ease forwards;
+  animation: float 1s ease forwards;
 }
 
 img {
-    height: 280px;
-    width: 160px;
+  height: 280px;
+  width: 160px;
 }
 
-.flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    flex-direction: column;
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  flex-direction: column;
 }
 
 .flip-card-front {
-    width: auto;
-    height: auto;
-    justify-content: center;
+  width: auto;
+  height: auto;
+  justify-content: center;
 }
 
 .flip-card-back {
-    background-color: beige;
-    color:aliceblue;
-    margin-left: 20px;
-    transform: rotateY(180deg);
-    justify-content: center;
-    align-self: center;
-    align-items: center;
+  background-color: beige;
+  color: aliceblue;
+  margin-left: 20px;
+  transform: rotateY(180deg);
+  justify-content: center;
+  align-self: center;
+  align-items: center;
 }
 
 /*
@@ -198,11 +198,11 @@ img {
 */
 
 .flip-card.flip .flip-card-front {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .flip-card.flip .flip-card-back {
-    transform: rotateY(0deg);
+  transform: rotateY(0deg);
 }
 
 /* SIDE BAR */
@@ -241,126 +241,134 @@ img {
 */
 
 button {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 #button-wrapper {
-    font-family: "DM Serif Text", serif;
-    text-align: center;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
+  font-family: "DM Serif Text", serif;
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 #button-wrapper :hover {
-    background-color: #f4d06f;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  background-color: #f4d06f;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 #display-box {
-    width:500px; 
-    border: solid #f4d06f 1px;
-    height: 120px;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    margin-bottom: 10px;
-    display: none;
-    background-color: #48435c ;
-    position: relative;
+  width: 500px;
+  border: solid #f4d06f 1px;
+  height: 120px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin-bottom: 10px;
+  display: none;
+  background-color: #48435c;
+  position: relative;
 }
 
 #display-box::before {
-    content: "⋆˙⟡ Reading ⋆˙⟡";
-    font-family: "DM Serif Text", serif;
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    text-shadow: 1px 2px rgb(41, 41, 41);
-    letter-spacing: 2px;
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform:  translateX(-50%);
-    background-color: #48435c ;
-    padding: 0 10px;
+  content: "⋆˙⟡ Reading ⋆˙⟡";
+  font-family: "DM Serif Text", serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 2px rgb(41, 41, 41);
+  letter-spacing: 2px;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #48435c;
+  padding: 0 10px;
 }
-
 
 #draw {
-    align-self: flex-start; /* Move the button to the top */
-    margin-top: 0; /* Adjust margin as needed */
-    font-weight: bold;
-    text-align: center;
-    color: #392f5a;
-    width: 7rem;
-    height: 3rem;
-    border-radius: 20px;
+  align-self: flex-start; /* Move the button to the top */
+  margin-top: 0; /* Adjust margin as needed */
+  font-weight: bold;
+  text-align: center;
+  color: #392f5a;
+  width: 7rem;
+  height: 3rem;
+  border-radius: 20px;
 }
 
-button, #draw, #display {
-    position: relative;
-    z-index: 2;
+button,
+#draw,
+#display {
+  position: relative;
+  z-index: 2;
 }
 
 .reading {
-    font-family: "DM Serif Text", serif;
-    color:#f4d06f;
-    text-shadow: 1px 2px rgb(41, 41, 41);
-    letter-spacing: 1px;
+  font-family: "DM Serif Text", serif;
+  color: #f4d06f;
+  text-shadow: 1px 2px rgb(41, 41, 41);
+  letter-spacing: 1px;
 }
 
 .star {
-    position: absolute;
-    z-index: -10;
-    border-radius: 50%;
-    top: -20px;
-    color: #f6e7bd;
-    animation: fadeOut 5s ease-out;
-    /* you can set infinite too */
-  }
-  
-  .star::before {
-    content: "\f005";
-    font-family: FontAwesome;
-    text-shadow: 0 0 5px #f4d06f, 0 0 20px #fff, 0 0 50px #fff;
-  }
-
-  @media (max-width: 768px) {
-    #display-box {
-        width: 100%;
-        padding: 10px;
-    }
-    h1, h2, h4 {
-        font-size: 1.5rem; 
-    }
+  position: absolute;
+  z-index: -10;
+  border-radius: 50%;
+  top: -20px;
+  color: #f6e7bd;
+  animation: fadeOut 5s ease-out;
+  /* you can set infinite too */
 }
 
-  
-  @keyframes animate {
-    0% {
-      transform: translateY(0) rotate(0deg);
-      opacity: 1;
-    }
-  
-    80% {
-      opacity: 1;
-    }
-  
-    100% {
-      transform: translateY(100vh) rotate(360deg);
-      opacity: 0;
-    }
+.star::before {
+  content: "\f005";
+  font-family: FontAwesome;
+  text-shadow:
+    0 0 5px #f4d06f,
+    0 0 20px #fff,
+    0 0 50px #fff;
+}
+
+@media (max-width: 768px) {
+  #display-box {
+    width: 100%;
+    padding: 10px;
+  }
+  h1,
+  h2,
+  h4 {
+    font-size: 1.5rem;
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
   }
 
-  @keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
+  80% {
+    opacity: 1;
   }
-  
-  @media screen and (max-width: 600px) {
-    .star {
-      font-size: 8px;
-    }
+
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
   }
-  
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .star {
+    font-size: 8px;
+  }
+}

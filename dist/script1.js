@@ -7,8 +7,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { deck } from './card.js';
-import { stars } from './stars.js';
+import { deck } from "./card.js";
+import { stars } from "./stars.js";
 //Throttle function implementation for stars
 function throttle(func, limit) {
     let lastFunc;
@@ -49,9 +49,9 @@ document.getElementById("draw").onclick = function () {
         </div>
     </div>
     `;
-    const newFlipCard = document.querySelector('.flip-card');
-    const cardTitle = document.querySelector('h2');
-    const reDraw = document.querySelector('h4');
+    const newFlipCard = document.querySelector(".flip-card");
+    const cardTitle = document.querySelector("h2");
+    const reDraw = document.querySelector("h4");
     setTimeout(() => {
         newFlipCard.classList.add("animate");
     }, 10);
@@ -60,25 +60,25 @@ document.getElementById("draw").onclick = function () {
             newFlipCard.classList.toggle("flip");
             cardTitle.style.display = "block";
             reDraw.style.display = "block";
-            const previousReading = displayBox.querySelector('.reading');
+            const previousReading = displayBox.querySelector(".reading");
             if (previousReading) {
                 previousReading.remove();
             }
             const reading = yield getCardReading(currentCard.name);
-            const readingElement = document.createElement('p');
-            readingElement.classList.add('reading');
+            const readingElement = document.createElement("p");
+            readingElement.classList.add("reading");
             readingElement.innerText = reading;
             displayBox.appendChild(readingElement);
             displayBox.style.display = "block";
         });
     };
     /*
-    flipCard.addEventListener("mouseover", function() {
-        if(flipCard.classList.contains("flip")) {
-            flipCard.style.transform = "rotateY(180deg)";
-        }
-    });
-    */
+      flipCard.addEventListener("mouseover", function() {
+          if(flipCard.classList.contains("flip")) {
+              flipCard.style.transform = "rotateY(180deg)";
+          }
+      });
+      */
     newFlipCard.addEventListener("mouseout", function () {
         newFlipCard.style.transform = "rotateY(0deg)";
     });
@@ -88,10 +88,10 @@ document.getElementById("draw").onclick = function () {
 function getCardReading(card) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const response = yield fetch('http://localhost:3000/generate-reading', {
-                method: 'POST',
+            const response = yield fetch("http://localhost:3000/generate-reading", {
+                method: "POST",
                 headers: {
-                    'Content-Type': 'application/json',
+                    "Content-Type": "application/json",
                 },
                 body: JSON.stringify({ card }),
             });
@@ -99,8 +99,8 @@ function getCardReading(card) {
             return data.reading;
         }
         catch (error) {
-            console.error('Error fetching card reading:', error);
-            return 'Error fetching reading. Please try again.';
+            console.error("Error fetching card reading:", error);
+            return "Error fetching reading. Please try again.";
         }
     });
 }

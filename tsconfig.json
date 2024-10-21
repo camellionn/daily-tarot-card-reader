@@ -1,17 +1,16 @@
 {
-    "compilerOptions": {
-      "target": "es6",               // Target JavaScript version
-      "module": "es6",               // Module system (ES6 modules)
-      "outDir": "./dist",            // Output directory for compiled files
-      "rootDir": "./src",            // Root directory of your TypeScript files
-      "strict": true,                // Enable strict type checking
-      "esModuleInterop": true        // Enable compatibility with CommonJS modules
-    },
-    "include": [
-      "src/**/*"
-    ],
-    "exclude": [
-      "node_modules"
-    ]
-  }
-  
+  "compilerOptions": {
+    "target": "ESNext",                          // Specify ECMAScript target version
+    "module": "ESNext",                          // Specify module code generation
+    "moduleResolution": "node",                  // Use Node.js style module resolution
+    "esModuleInterop": true,                     // Enables emit interoperability between CommonJS and ES Modules
+    "skipLibCheck": true,                        // Skip type checking of declaration files
+    "forceConsistentCasingInFileNames": true,   // Disallow inconsistently-cased references to the same file
+    "strict": true,                              // Enable all strict type-checking options
+    "paths": {
+      "*": ["./node_modules/*"]                    // Setup paths for module resolution
+    }
+  },
+  "include": ["src/**/*"],                       // Adjust this to your source directory
+  "exclude": ["node_modules"]
+}
