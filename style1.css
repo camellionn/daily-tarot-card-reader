@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: "LaSignora";
   src: url(LaSignoraDemoVersionRegular-X3jp9.ttf);
