@@ -54,7 +54,7 @@ document.getElementById("draw")!.onclick = function () {
     </div>
     `;
 
-  const newFlipCard = document.querySelector(".flip-card") as HTMLElement;
+  const newFlipCard = document.querySelector(".flip-card") as HTMLButtonElement;
   const cardTitle = document.querySelector("h2") as HTMLElement;
   const reDraw = document.querySelector("h4") as HTMLElement;
 

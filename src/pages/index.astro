@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,18 +17,25 @@
       @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
     </style>
   </head>
-  <body>
-    <div class="topnav">
-      <h5>Card Draw Options</h5>
-      <a class="active" href="index.html">Daily Reading (Single Card)</a>
-      <a href="three-card-spread.html">Three-Card Spread</a>
+  <body class ="h-full w-screen flex-col flex justify-center items-center">
+    <div class="topnav absolute start-0 top-0 right-0 h-12 flex p-2 bg-gray-700">
+      <a
+        class="active text-gray-200 no-underline text-base px-4 hover:text-black hover:bg-white transition-colors justify-center"
+        href="index.html"
+        >Daily Reading (Single Card)</a
+      >
+      <a
+        class="text-gray-200 no-underline text-base px-4 hover:text-black hover:bg-white transition-colors justify-center"
+        href="three-card-spread.html"
+        >Three-Card Spread</a
+      >
     </div>
 
-    <div class="class-container">
+    <div class="class-container mt-16 text-center flex flex-col justify-center items-center w-full">
       <div id="card-container">
         <div id="display">
           Click on
-          <h1>Draw A Card</h1>
+          <h1 class="text-white tracking-wide">Draw A Card</h1>
           to see your tarot card of the day!
         </div>
       </div>
