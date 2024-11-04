@@ -36,7 +36,7 @@ const readings: { [key: string]: string } = {
     "The Star": "The Star symbolizes hope, inspiration, and healing. Trust in the future and have faith in your dreams.",
     "The Moon": "The Moon represents illusion, intuition, and the unconscious. Navigate through confusion and trust your instincts.",
     "The Sun": "The Sun symbolizes joy, success, and vitality. Celebrate your achievements and embrace positivity.",
-    "Judgment": "Judgment represents self-reflection, accountability, and rebirth. Evaluate your actions and embrace transformation.",
+    "Judgement": "Judgment represents self-reflection, accountability, and rebirth. Evaluate your actions and embrace transformation.",
     "The World": "The World symbolizes completion, accomplishment, and fulfillment. Celebrate your achievements and enjoy a sense of wholeness.",
     
     // Minor Arcana
